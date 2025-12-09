@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>One Page Love App</title>
+<style>
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe5e5;
+    font-family: sans-serif;
+}
+.container {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px;
+}
+.container.active {
+    display: flex;
+}
+.btn {
+    display: flex;
+    gap: 25px;
+}
+.btn button {
+    text-decoration: none;
+    color: #111;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+    cursor: pointer;
+}
+.tenor-gif-embed {
+    max-width: 220px;
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="container active">
+<div class="tenor-gif-embed" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918" data-width="100%"></div>
+<h1>Do you love me? 🤗</h1>
+<p>jatin is all yours</p>
+<div class="btn">
+<button onclick="goTo('yes')">Yes</button>
+<button onclick="goTo('no1')">No</button>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="no1" class="container">
+<div class="tenor-gif-embed" data-postid="22050818" data-share-method="host" data-aspect-ratio="1" data-width="100%"></div>
+<h1>Please think again! 🙄</h1>
+<p>itni jaldi nahi matt bolo 😥</p>
+<div class="btn">
+<button onclick="goTo('yes')">Yes</button>
+<button onclick="goTo('no2')">No</button>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div id="no2" class="container">
+<div class="tenor-gif-embed" data-postid="15195810" data-share-method="host" data-aspect-ratio="1" data-width="100%"></div>
+<h1>Ek aur baar soch lo! 😣</h1>
+<p>kyu aisa kar rahi ho 😣</p>
+<div class="btn">
+<button onclick="goTo('yes')">Yes</button>
+<button onclick="goTo('no3')">No</button>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div id="no3" class="container">
+<div class="tenor-gif-embed" data-postid="15974530976611222074" data-share-method="host" data-aspect-ratio="1.26923" data-width="100%"></div>
+<h1>Baby man jao na! Kitna bhav khaogi 😭</h1>
+<p>bhut glt baat hai yaar😭</p>
+<div class="btn">
+<button onclick="goTo('yes')">Yes</button>
+<button id="run">No</button>
+</div>
+</div>
+
+<!-- YES PAGE -->
+<div id="yes" class="container">
+<div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853" data-width="100%"></div>
+<h1>Hehehehe, I knew it! Love you a lot 😘</h1>
+</div>
+
+<!-- TENOR SCRIPT -->
+<script async type="text/javascript" src="https://tenor.com/embed.js"></script>
+
+<script>
+function goTo(page) {
+    document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
+    document.getElementById(page).classList.add('active');
+}
+
+const btn = document.getElementById("run");
+btn.addEventListener("mouseenter", () => {
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * 80 + "%";
+    btn.style.left = Math.random() * 80 + "%";
+});
+</script>
+
+</body>
+</html>
